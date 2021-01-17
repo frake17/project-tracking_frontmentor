@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="../../static/css/css.css">
+{% endblock %}
+
+{% block content %}
+<div class="fluid-container">
+    <h1 style="text-align: center;">Order summary</h1>
+    <div class="summary">
+        <h2>Current order</h2>
+        <p><span style="font-weight: bold;">Order Id: </span>{{current.get_id()}}</p>
+        <p><span style="font-weight: bold;">Name: </span>{{current.get_name()}}</p>
+        <p><span style="font-weight: bold;">Phone Number: </span>{{current.get_phone()}}</p>
+        <p><span style="font-weight: bold;">Postal code: </span>{{current.get_postal()}}</p>
+        <p><span style="font-weight: bold;">Address: </span>{{current.get_address()}}</p>
+        <p><span style="font-weight: bold;">General location: </span>{{current.get_location()}}</p>
+        <p><span style="font-weight: bold;">Block level: </span>{{current.get_level()}}</p>
+        <p><span style="font-weight: bold;">Door number: </span>{{current.get_door()}}</p>
+        <p><span style="font-weight: bold;">Card number: </span>{{current.get_card_no()}}</p>
+        <p><span style="font-weight: bold;">Expiry date: </span>{{current.get_exp_date()}}</p>
+        <p><span style="font-weight: bold;">CVV: </span>{{current.get_cvv()}}</p>
+        <p><span style="font-weight: bold;">Card type: </span>{{current.get_card()}}</p>
+        <br>
+        <h2>All orders</h2>
+        {% for item in item_list %}
+        <br>
+            <p><span style="font-weight: bold;">Order Id: </span>{{item.get_id()}}</p>
+            <p><span style="font-weight: bold;">Name: </span>{{item.get_name()}}</p>
+            <p><span style="font-weight: bold;">Phone Number: </span>{{item.get_phone()}}</p>
+            <p><span style="font-weight: bold;">Postal code: </span>{{item.get_postal()}}</p>
+            <p><span style="font-weight: bold;">Address: </span>{{item.get_address()}}</p>
+            <p><span style="font-weight: bold;">Block level: </span>{{item.get_level()}}</p>
+            <p><span style="font-weight: bold;">Door number: </span>{{item.get_door()}}</p>
+            <p><span style="font-weight: bold;">Card number: </span>{{item.get_card_no()}}</p>
+            <p><span style="font-weight: bold;">Expiry date: </span>{{item.get_exp_date()}}</p>
+            <p><span style="font-weight: bold;">CVV: </span>{{item.get_cvv()}}</p>
+            <p><span style="font-weight: bold;">Card type: </span>{{item.get_card()}}</p>
+        <br>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

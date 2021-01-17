@@ -1,0 +1,21 @@
+decide if search bar + icons + dropdwon shld be middle or seperated to each side
+
+form tag for file input needs 'enctype=multipart/form-data'
+
+click on shop give more details?
+
+use flex-wrap for shop display
+
+session for order, use {user_email : {item.get_id:item} }
+
+create obj for suppliers and use select for restock
+
+take away option to create stock_left, minnus when order onnline add minus and plus ( do this next )
+
+delete try to delete img as well
+
+add remkars to delivery (to test )
+
+cart id ( to test ) 
+
+clear cart on delivery ( to test )

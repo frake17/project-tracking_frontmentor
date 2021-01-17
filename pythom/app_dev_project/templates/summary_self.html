@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="fluid-container">
+    <h1 style="text-align: center;">Order summary</h1>
+    <div class="summary">
+        <h2>Current order</h2>
+            <p><span style="font-weight: bold;">Order Id: </span>{{current.get_id()}}</p>
+            <p><span style="font-weight: bold;">Name: </span>{{current.get_name()}}</p>
+            <p><span style="font-weight: bold;">Phone Number: </span>{{current.get_number()}}</p>
+            <p><span style="font-weight: bold;">Location:  </span>{{current.get_location()}}</p>
+            <p><span style="font-weight: bold;">Date: </span>{{current.get_date()}}</p>
+            <p><span style="font-weight: bold;">Time: </span>{{current.get_time()}}</p>
+            <p><span style="font-weight: bold;">Card number: </span>{{current.get_card_no()}}</p>
+            <p><span style="font-weight: bold;">Expiry date: </span>{{current.get_exp()}}</p>
+            <p><span style="font-weight: bold;">CVV: </span>{{current.get_cvv()}}</p>
+            <p><span style="font-weight: bold;">Card type: </span>{{current.get_card()}}</p>
+        <br>
+        <h2>All orders</h2>
+        {% for item in item_list %}
+        <br>
+            <p><span style="font-weight: bold;">Order Id: </span>{{item.get_id()}}</p>
+            <p><span style="font-weight: bold;">Name: </span>{{item.get_name()}}</p>
+            <p><span style="font-weight: bold;">Phone Number: </span>{{item.get_number()}}</p>
+            <p><span style="font-weight: bold;">Location:  </span>{{item.get_location()}}</p>
+            <p><span style="font-weight: bold;">Date: </span>{{item.get_date()}}</p>
+            <p><span style="font-weight: bold;">Time: </span>{{item.get_time()}}</p>
+            <p><span style="font-weight: bold;">Card number: </span>{{item.get_card_no()}}</p>
+            <p><span style="font-weight: bold;">Expiry date: </span>{{item.get_exp()}}</p>
+            <p><span style="font-weight: bold;">CVV: </span>{{item.get_cvv()}}</p>
+            <p><span style="font-weight: bold;">Card type: </span>{{item.get_card()}}</p>
+        <br>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+

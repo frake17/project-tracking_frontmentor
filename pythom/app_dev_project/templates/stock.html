@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% block title %}Stock{% endblock %}
+
+{% block head %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../../static/js/Script.js"></script>
+    <link rel="stylesheet" href="../../static/css/css.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block content %}
+{% if 'item_created' in session %}
+<div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  {{ session.pop('item_created', None) }} was created.
+</div>
+{% elif 'item_updated' in session %}
+<div class="alert alert-warning alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  {{ session.pop('item_updated', None) }} was updated.
+</div>
+{% elif 'item_deleted' in session %}
+<div class="alert alert-danger alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  {{ session.pop('item_deleted', None) }} was deleted.
+</div>
+{% endif %}
+  <div class="container-fluid ">
+
+    <div class="d-flex flex-row ">
+              <div class="form-group p-2 mr-auto">
+                <input type="text" class="form-control" placeholder="Search" name="search" id="box">
+              </div>
+                <a class="p-2" href="/create_stock"><img class="icon" src="../../static/img/plus.png" width="40" height="40"></a>
+                <a class="p-2" id="notification"><img class="icon" src="../../static/img/notification.png" width="40" height="40"></a>
+            <!--
+            <a class="p-2"><img class="icon" src="../../static/img/cart.png" width="40" height="40"></a>
+            -->
+             <div class="dropdown p-2">
+                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                     Dropdown button
+                 </button>
+                 <div class="dropdown-menu">
+                     <a class="dropdown-item" href="#">Link 1</a>
+                     <a class="dropdown-item" href="#">Link 2</a>
+                     <a class="dropdown-item" href="#">Link 3</a>
+                 </div>
+             </div>
+        </div>
+    <div class="flex-column" id="item-container">
+        <div class="p-2 item" id="item">
+            <div class="flex-row-item">
+                <img src="../../static/img/food.png" width="100" height="100" />
+                <div class="flex-colum-item">
+                    <div class="flex-row-item">
+                        <div id="stock_name">1</div>
+                        <div>1 supplier</div>
+                        <a href="restock"><button class="btn btn-light">restock</button></a>
+                        <a href=""><button class="btn btn-light">Edit</button></a>
+                        <form action="" method="POST">
+                            <!-- Button to Open the Modal -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                              Delete
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title">Delete Confirmation</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+
+                                  <!-- Modal body -->
+                                  <div class="modal-body">
+                                    Are you sure you want to delete ?
+                                  </div>
+                                  <!-- Modal footer -->
+                                  <div class="modal-footer">
+                                      <input type="submit" value="Delete" class="btn btn-danger">
+                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="container">
+                      <p>Amount left</p>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+                            10%
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 item" id="item">
+            <div class="flex-row-item">
+                <img src="../../static/img/food.png" width="100" height="100" />
+                <div class="flex-colum-item">
+                    <div class="flex-row-item">
+                        <div id="stock_name">2</div>
+                        <div>2 supplier</div>
+                        <a href="restock"><button class="btn btn-light">restock</button></a>
+                        <a href=""><button class="btn btn-light">Edit</button></a>
+                        <form action="" method="POST">
+                            <!-- Button to Open the Modal -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                              Delete
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title">Delete Confirmation</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+
+                                  <!-- Modal body -->
+                                  <div class="modal-body">
+                                    Are you sure you want to delete?
+                                  </div>
+                                  <!-- Modal footer -->
+                                  <div class="modal-footer">
+                                      <input type="submit" value="Delete" class="btn btn-danger">
+                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="container">
+                      <p>Amount left</p>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+                            10%
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for item in item_list %}
+        <div class="p-2 item">
+            <div class="flex-row-item">
+                <img src="../../static/img/uploaded/{{ item.get_stock_name() }}.png" width="100" height="100" />
+                <div class="flex-colum-item">
+                    <div class="flex-row-item">
+                        <div>{{ item.get_stock_name() }}</div>
+                        <div>{{ item.get_supplier_name() }}</div>
+                        <a href="restock"><button class="btn btn-light">restock</button></a>
+                        <a href="update_stock/{{ item.get_id() }}"><button class="btn btn-light">Edit</button></a>
+                        <form action="{{url_for('delete_stock', id=item.get_id())}}" method="POST">
+                            <!-- Button to Open the Modal -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal_{{item.get_id()}}">
+                              Delete
+                            </button>
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal_{{item.get_id()}}">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                  <!-- Modal Header -->
+                                  <div class="modal-header">
+                                    <h4 class="modal-title">Delete Confirmation</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  </div>
+
+                                  <!-- Modal body -->
+                                  <div class="modal-body">
+                                    Are you sure you want to delete {{item.get_stock_name()}}?
+                                  </div>
+                                  <!-- Modal footer -->
+                                  <div class="modal-footer">
+                                      <input type="submit" value="Delete" class="btn btn-danger">
+                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="container">
+                      <p>Amount left : {{item.get_stock_left()}} / {{item.get_amt_of_stock()}}</p>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{ item.get_percentage() }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ item.get_percentage() }}%">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="popup">
+        <div class="flex-notification">
+            <div class="flex-notification-row">
+                <img src="../../static/img/food.png" width="40" height="40" />
+                <div>Name Low on stock. <br />Please restock</div>
+                                            <!--
+                <i style='font-size:24px' class='fas'>&#xf105;</i>
+                -->
+            </div>
+            <div class="flex-notification-row">
+                <img src="../../static/img/food.png" width="40" height="40" />
+                <div>Name Low on stock. <br />Please restock</div>
+                                            <!--
+                <i style='font-size:24px' class='fas'>&#xf105;</i>
+                -->
+            </div>
+            {% for item in item_list %}
+            {% if item.get_percentage() <= 20 %}
+            <div class="flex-notification-row">
+                <img src="../../static/img/food.png" width="40" height="40" />
+                <div>Name Low on stock. <br />Please restock</div>
+                                            <!--
+                <i style='font-size:24px' class='fas'>&#xf105;</i>
+                -->
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+  </div>
+    <div class="mask"></div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="../../static/js/Script.js"></script>
+{% endblock %}
+

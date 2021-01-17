@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Update item{% endblock %}
+
+{% block content %}
+{% from "includes/_formHelper.html" import render_field %}
+
+<h1 class="display-4">Create shop item</h1>
+
+<form method="POST" action="" enctype=multipart/form-data>
+  <h2>Image.png for item(Img and stock name are to be the same)</h2>
+  <input type=file name=file>
+  <div class="form-group">
+    {{ render_field(form.stock_name, class="form-control") }}
+  </div>
+  <div class="form-group">
+    {{ render_field(form.supplier_name, class="form-control") }}
+  </div>
+  <div class="form-group">
+    {{ render_field(form.price, class="form-control") }}
+  </div>
+  <div class="form-group">
+    {{ render_field(form.origin, class="form-control") }}
+  </div>
+      <div class="form-group">
+    {{ render_field(form.weight, class="form-control") }}
+  </div>
+      <div class="form-group">
+    {{ render_field(form.Dietary, class="form-control") }}
+  </div>
+          <div class="form-group">
+    {{ render_field(form.category, class="form-control") }}
+  </div>
+  <div class="form-group">
+    {{ render_field(form.amt_of_stock, class="form-control") }}
+  </div>
+      <div class="form-group">
+    {{ render_field(form.ingredients, class="form-control") }}
+  </div>
+      <div class="form-group">
+    {{ render_field(form.description, class="form-control") }}
+  </div>
+  <input type="submit" value="Submit" class="btn btn-primary"/>
+</form>
+{% endblock %}
