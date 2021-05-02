@@ -1,4 +1,0 @@
-stores = {'Alijunied': 'Blk 118 Aljunied Ave 2, #01-100, Singapore 380118', 'Achorvale': 'Blk 338 Anchorvale Crescent, #01-11 Singapore 540338', 'Ang Mo Kio': 'Blk 122 Ang Mo Kio Ave 3, #01-1753/1755 Singapore 560122', 'Bedok': 'Blk 115 Bedok North Road, #01-319 Singapore 460115',
-              'Buki Batok': 'Blk 292 Bukit Batok East Avenue 6, #01-02 Singapore 650292', 'Canberra': 'Blk 105 Canberra St, #02-05 Singapore 750105', 'Clementi West': 'Blk 720 Clementi West St 2, #01-144 Singapore 120720', 'Dawson Rd' : '85 Dawson Road, #01-01 Singapore 141085', 'Toa payoh': 'Blk 4 Toa Payoh Lorong 7, #01-107 Singapore 310004',
-              'Geylang 301': 'Blk 301 Geylang Lorong 15, #01-02, BCH Building Singapore 389344', 'Elias mall': 'Blk 623 Elias Road, #B1-01 Elias Mall (Stalls #14-16) Singapore 510623', 'Fajar': 'Blk 446 Fajar Rd, #01-01 Singapore 670446', 'Yishun Ave 675': 'Blk 675 Yishun Avenue 4, #01-10 Singapore 760675'}
-    
