@@ -1,2 +1,0 @@
-change nav bar to bg-info + bold words
-#A8A8A8
