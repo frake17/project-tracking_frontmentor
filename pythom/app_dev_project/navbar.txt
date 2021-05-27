@@ -1,0 +1,14 @@
+admin
+store 
+stock
+orders
+login
+temp
+locator
+retrieve users
+
+customer
+locator
+shop
+signup
+login 
